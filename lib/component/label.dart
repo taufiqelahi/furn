@@ -1,17 +1,12 @@
-
-
 import 'package:flutter/cupertino.dart';
 import 'package:furn/utils/all_colors.dart';
+import 'package:furn/utils/typo.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
-enum Fonts { lobster, roboto, inter ,workSans}
-
 class Label extends StatelessWidget {
-  final Fonts? fonts;
   final String text;
-  final double? fontSize;
-  final FontWeight? fontWeight;
+  final Typo? typoStyle;
+
   final int? maxLine;
   final TextOverflow? overflow;
   final TextAlign? align;
@@ -19,28 +14,29 @@ class Label extends StatelessWidget {
   final TextDecoration? underline;
   final double? letterspacing;
 
-  const Label({
-    Key? key,
-    required this.text,
-    this.fontSize,
-    this.fontWeight,
-    this.align,
-    this.color,
-    this.maxLine,
-    this.overflow,
-    this.underline,
-    this.fonts,
-    this.letterspacing
+  const Label(
+      {Key? key,
+      required this.text,
+      this.align,
+      this.color,
+      this.maxLine,
+      this.overflow,
+      this.underline,
+      this.letterspacing,
+      this.typoStyle})
+      : super(key: key);
 
-  }) : super(key: key);
 
+  final Typo defaultTypoStyle=TypoStyle.p1;
   get textStyleBuilder => TextStyle(
       decoration: underline ?? TextDecoration.none,
-      fontSize: fontSize ?? 14,
-      fontWeight: fontWeight ?? FontWeight.normal,
+      fontSize: (typoStyle ??defaultTypoStyle)
+          .fontSize,
+      fontWeight: (typoStyle ??
+              defaultTypoStyle)
+          .fontWeight,
       color: color ?? AllColors.black,
-      letterSpacing: letterspacing ?? 0.2
-  );
+      letterSpacing: letterspacing ?? 0.2);
 
   @override
   Widget build(BuildContext context) {
@@ -50,24 +46,22 @@ class Label extends StatelessWidget {
             maxLines: maxLine ?? 50,
             overflow: overflow ?? TextOverflow.visible,
             textAlign: align ?? TextAlign.left,
-
             style: getTextStyle));
   }
 
   TextStyle get getTextStyle {
     TextStyle defaultTextStyle = textStyleBuilder;
-    switch (fonts) {
-      case Fonts.lobster:
-        return GoogleFonts.lobster(textStyle: defaultTextStyle);
-      case Fonts.workSans:
-        return GoogleFonts.workSans(textStyle: defaultTextStyle);
+    if (typoStyle == null) {
+      return GoogleFonts.almarai(textStyle: defaultTextStyle);
+    }
+    switch (typoStyle!.fonts) {
+      case Fonts.lato:
+        return GoogleFonts.lato(textStyle: defaultTextStyle);
+      case Fonts.almarai:
+        return GoogleFonts.almarai(textStyle: defaultTextStyle);
 
-      case Fonts.inter:
-        return GoogleFonts.inter(textStyle: defaultTextStyle);
-      case Fonts.roboto:
-        return GoogleFonts.roboto(textStyle: defaultTextStyle);
       default:
-        return GoogleFonts.workSans(textStyle: defaultTextStyle);
+        return GoogleFonts.almarai(textStyle: defaultTextStyle);
     }
   }
 }

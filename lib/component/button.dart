@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:furn/component/label.dart';
 import 'package:furn/utils/all_colors.dart';
-import 'package:furn/utils/font_size.dart';
+import 'package:furn/utils/typo.dart';
 
 
 
@@ -11,11 +11,12 @@ class FillButton extends StatelessWidget {
   final String title;
   final VoidCallback onPressed;
   final Color? containerColor, textColor;
-  final double? height, fontSize;
-  final FontWeight? fontWeight;
+  final double? height;
+  final Typo ?typoStyle;
   final double? width;
   final BorderRadius ?borderRadius;
   final double? pressedOpacity;
+
 
   const FillButton(
       {Key? key,
@@ -24,9 +25,9 @@ class FillButton extends StatelessWidget {
         this.containerColor,
         this.textColor,
         this.height,
-        this.fontWeight,
-        this.fontSize,
-        this.width, this.borderRadius, this.pressedOpacity=0.4})
+
+
+        this.width, this.borderRadius, this.pressedOpacity=0.4,  this.typoStyle})
       : super(key: key);
 
   @override
@@ -48,8 +49,7 @@ class FillButton extends StatelessWidget {
             child: Label(
               text: title,
               color: textColor ?? AllColors.white,
-              fontWeight: fontWeight ?? FontWeight.normal,
-              fontSize: fontSize ?? FontSize.p1,
+              typoStyle: typoStyle,
             )));
   }
 }

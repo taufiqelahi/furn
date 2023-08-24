@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:furn/utils/all_colors.dart';
 
-import '../utils/font_size.dart';
+import '../utils/typo.dart';
 
 class CustomTextField extends StatelessWidget {
   final String hintText;
@@ -32,7 +32,7 @@ class CustomTextField extends StatelessWidget {
       showCursor: showCursor,
       enableInteractiveSelection: enableInteractiveSelection,
       enabled: enable ?? true,
-      style: TextStyle(fontSize: FontSize.p1),
+      style: TextStyle(fontSize:(TypoStyle.p1 ).fontSize),
       autofocus: true,
       onTap: ontap,
       validator: validator,
