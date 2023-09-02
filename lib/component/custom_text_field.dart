@@ -32,7 +32,7 @@ class CustomTextField extends StatelessWidget {
       showCursor: showCursor,
       enableInteractiveSelection: enableInteractiveSelection,
       enabled: enable ?? true,
-      style: TextStyle(fontSize:(TypoStyle.p1 ).fontSize),
+      style: TextStyle(fontSize:(TypoStyle.p).fontSize),
       autofocus: true,
       onTap: ontap,
       validator: validator,
@@ -41,17 +41,17 @@ class CustomTextField extends StatelessWidget {
       decoration: InputDecoration(
           labelText:
               controller.text.isEmpty ? (labelText ?? hintText) : hintText,
-          border: UnderlineInputBorder(
+          border: const UnderlineInputBorder(
               borderSide: BorderSide(color: AllColors.white)),
-          focusedBorder: UnderlineInputBorder(
+          focusedBorder: const UnderlineInputBorder(
               borderSide: BorderSide(color: AllColors.white)),
-          enabledBorder: UnderlineInputBorder(
+          enabledBorder: const UnderlineInputBorder(
               borderSide: BorderSide(color: AllColors.white)),
           errorBorder:
-              UnderlineInputBorder(borderSide: BorderSide(color: Colors.red)),
+              const UnderlineInputBorder(borderSide: BorderSide(color: Colors.red)),
           hintText: hintText,
-          hintStyle: TextStyle(color: AllColors.black),
-          labelStyle: TextStyle(color: AllColors.white)),
+          hintStyle: const TextStyle(color: AllColors.black),
+          labelStyle: const TextStyle(color: AllColors.white)),
     );
   }
 }
@@ -89,17 +89,17 @@ class _AuthInputFieldState extends State<AuthInputField> {
           labelText: widget.controller.text.isEmpty
               ? (widget.labelText ?? widget.hintText)
               : widget.hintText,
-          border: UnderlineInputBorder(
+          border: const UnderlineInputBorder(
               borderSide: BorderSide(color: AllColors.white)),
-          focusedBorder: UnderlineInputBorder(
+          focusedBorder: const UnderlineInputBorder(
               borderSide: BorderSide(color: AllColors.white)),
-          enabledBorder: UnderlineInputBorder(
+          enabledBorder: const UnderlineInputBorder(
               borderSide: BorderSide(color: AllColors.white)),
           errorBorder:
-              UnderlineInputBorder(borderSide: BorderSide(color: Colors.red)),
+              const UnderlineInputBorder(borderSide: BorderSide(color: Colors.red)),
           hintText: widget.hintText,
-          hintStyle: TextStyle(color: AllColors.black),
-          labelStyle: TextStyle(color: AllColors.white)),
+          hintStyle: const TextStyle(color: AllColors.black),
+          labelStyle: const TextStyle(color: AllColors.white)),
     );
   }
 }

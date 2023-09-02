@@ -27,7 +27,7 @@ class Label extends StatelessWidget {
       : super(key: key);
 
 
-  final Typo defaultTypoStyle=TypoStyle.p1;
+  final Typo defaultTypoStyle=TypoStyle.p;
   get textStyleBuilder => TextStyle(
       decoration: underline ?? TextDecoration.none,
       fontSize: (typoStyle ??defaultTypoStyle)
