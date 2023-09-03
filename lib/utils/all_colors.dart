@@ -29,4 +29,5 @@ class AllColors {
   static const Color textGrey = Color(0xFF585A66);
   static const Color darkGrey = Color(0xFFCCCCCC);
   static const Color errorRed = Color(0xFFDC7603);
+  static const Color pageColor=Color(0xFFE5E5E5);
 }
