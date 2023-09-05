@@ -26,7 +26,7 @@ class TypoStyle {
       Typo(fontWeight: FontWeight.normal, fonts: Fonts.lato, fontSize: 18);
 
   static const Typo p =
-      Typo(fontWeight: FontWeight.normal, fonts: Fonts.almarai, fontSize: 18);
+      Typo(fontWeight: FontWeight.normal, fonts: Fonts.lato, fontSize: 16);
   static const Typo t =
       Typo(fontWeight: FontWeight.normal, fonts: Fonts.lato, fontSize: 12);
   static const Typo mH1 =
